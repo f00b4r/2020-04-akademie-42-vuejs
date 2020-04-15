@@ -15,7 +15,7 @@
 export default {
   computed: {
     clicks() {
-      return this.$store.state.clicks;
+      return this.$store.state.user.clicks;
     }
   },
   methods: {

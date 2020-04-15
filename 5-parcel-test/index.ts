@@ -2,11 +2,23 @@ import Vue from 'vue';
 import Vuex from "vuex";
 import App from './App.vue';
 
+import {modelCreateUser} from "./model";
+
 Vue.use(Vuex);
 
 const store = new Vuex.Store({
+    modules: {
+        user: {
+            state: {
+                loading: false,
+            }
+        }
+    },
     state: {
-        clicks: 0
+        clicks: 0,
+        users: [],
+        errors: [],
+        loading: false,
     },
     mutations: {
         plus(state, { clicks }) {
@@ -17,9 +29,19 @@ const store = new Vuex.Store({
         },
         minus(state) {
             state.clicks -= 1;
+        },
+        ADD_ERROR(state, payload) {
+            state.errors.push(payload.message);
+        },
+        APPEND_USER(state, payload) {
+            state.users.push(payload.user);
+        },
+        LOADING(state, payload) {
+            state.loading = payload;
         }
     },
     actions: {
+        createUser: modelCreateUser,
         increase({ commit }) {
             fetch('https://www.mocky.io/v2/5e96fb483000007500b6d9e8')
                 .then(r => r.json())
