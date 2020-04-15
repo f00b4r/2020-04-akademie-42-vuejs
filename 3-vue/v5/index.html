@@ -8,7 +8,8 @@
 <body>
 
 <div id="app">
-    Total clicks: {{clicks}}
+    Total clicks: {{clicks}} vs {{x*10}}
+    Positive: {{positive ? 'ano' : 'ne'}}
     <button @click="onBtnClick">CLICK ME</button>
 </div>
 
@@ -21,7 +22,11 @@
         },
         mutations: {
             increaseClicks(state) {
-                state.clicks++;
+                if (state.clicks > 10) {
+                    state.clicks = 0;
+                } else {
+                    state.clicks++;
+                }
             }
         }
     });
@@ -30,8 +35,14 @@
         el: '#app',
         store: store,
         computed: {
-            clicks() {
+            x() {
                 return this.$store.state.clicks;
+            },
+            clicks: function() {
+                return this.$store.state.clicks;
+            },
+            positive() {
+                return this.$store.state.clicks % 2 === 0;
             }
         },
         methods: {

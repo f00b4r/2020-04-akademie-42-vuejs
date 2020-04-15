@@ -1,23 +1,25 @@
 <!doctype html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Vue #4</title>
 </head>
+
 <body>
 
-<div id="app">
-    <item-list :items="items"/>
-</div>
+    <div id="app">
+        <item-list :items="users" />
+    </div>
 
-<script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
-<script type="text/javascript">
-    Vue.component('item-detail', {
-        props: [
-            'item'
-        ],
-        template: `
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script type="text/javascript">
+        Vue.component('item-detail', {
+            props: [
+                'item'
+            ],
+            template: `
             <div :style="{color: item.power > 0 ? 'black' : 'red'}">
                 {{ item.name }}
 
@@ -26,32 +28,51 @@
                 <button @click="--item.power">-</button>
             </div>
         `
-    });
+        });
 
-    const app = new Vue({
-        el: '#app',
-        components: {
-            'item-list': {
-                props: [
-                    'items'
-                ],
-                template: `
+        const imported = {
+            props: ['item'],
+            template: `
+              <strong>IMPORTED! {{item.name}}</strong>
+            `
+        };
+
+        const app = new Vue({
+            el: '#app',
+            components: {
+                'item-list': {
+                    props: [
+                        'items'
+                    ],
+                    components: {
+                        'item-detail2': {
+                            props: ['item'],
+                            template: `
+                                <div>{{item.name}}</div>
+                            `
+                        },
+                        'item-detail3': imported
+                    },
+                    template: `
                     <ul>
                         <li v-for="item in items">
                             <item-detail :item="item"/>
+                            <item-detail2 :item="item"/>
+                            <item-detail3 :item="item"/>
                         </li>
                     </ul>
                 `
+                },
             },
-        },
-        data: () => ({
-            items: [
-                {name: 'Felix', power: 10},
-                {name: 'Chemix', power: 500},
-                {name: 'Chuck Norris', power: 1},
-            ]
+            data: () => ({
+                users: [
+                    { name: 'Felix', power: 10 },
+                    { name: 'Chemix', power: 500 },
+                    { name: 'Chuck Norris', power: 1 },
+                ]
+            })
         })
-    })
-</script>
+    </script>
 </body>
+
 </html>

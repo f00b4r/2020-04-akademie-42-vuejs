@@ -1,22 +1,27 @@
 <!doctype html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Vue #1</title>
 </head>
+
 <body>
 
-<div id="app">{{ msg }}</div>
+    <div id="app">
+        <span>Hello {{ msg }}</span>
+    </div>
 
-<script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
-<script type="text/javascript">
-    const app = new Vue({
-        el: '#app',
-        data: {
-            msg: 'I am Vue'
-        }
-    })
-</script>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <script type="text/javascript">
+        const app = new Vue({
+            el: '#app',
+            data: {
+                msg: 'I am Vue'
+            }
+        })
+    </script>
 </body>
+
 </html>
