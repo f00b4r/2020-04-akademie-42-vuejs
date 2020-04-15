@@ -18,16 +18,21 @@ Here comes the :rasehorse: power!
 
 Vue syntax, templates, SFC, filters, conditions, slots.
 
-### [[4] Vue CLI 3](./4-vue-cli)
+### [[4] Vue CLI](./4-vue-cli)
 
 Start project fast and cool!
 
-### [[5] Nette](./5-nette)
+### [[5] Parcel](./5-parcel)
+
+Boost your project without too much hassle.
+
+### [[6] Nette](./6-nette)
 
 Example nette application with preconfigured Webpack and Vue.js components.
 
 ## Workshop
 
+- 2020-04-15 - Remote
 - 2019-02-05 - Praha
 - 2018-11-15 - Hradec Kralove
 

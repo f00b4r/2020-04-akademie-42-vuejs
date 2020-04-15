@@ -1,0 +1,8 @@
+# Parcel
+/.cache
+
+# App
+/dist
+
+# NPM
+/node_modules
