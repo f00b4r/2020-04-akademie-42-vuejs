@@ -16,10 +16,10 @@
     "webpack": "^4.29.0",
     "webpack-bundle-analyzer": "^3.0.3",
     "webpack-cli": "^3.2.1",
-    "webpack-merge": "4.2.2"
+    "webpack-merge": "^4.2.2"
   },
   "scripts": {
-    "start": "webpack --mode development",
-    "build": "webpack --mode production"
+    "start": "NODE_ENV=development webpack",
+    "build": "NODE_ENV=production webpack"
   }
 }

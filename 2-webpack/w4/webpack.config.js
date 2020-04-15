@@ -2,9 +2,10 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
-    entry: [
-        "./app/main.js",
-    ],
+    entry: {
+        front: "./app/main.js",
+        admin: "./app/heavy.js",
+    },
     module: {
         rules: [
             {

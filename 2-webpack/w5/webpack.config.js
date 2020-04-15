@@ -29,7 +29,9 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: 'bundle.css',
         }),
-        new BundleAnalyzerPlugin(),
+        new BundleAnalyzerPlugin({
+            openAnalyzer: false
+        }),
         new VueLoaderPlugin(),
     ]
 };
