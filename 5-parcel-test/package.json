@@ -2,10 +2,10 @@
   "devDependencies": {
     "@vue/component-compiler-utils": "^3.2.0",
     "typescript": "^4.3.2",
-    "vue-template-compiler": "^2.6.13"
+    "vue-template-compiler": "^2.6.14"
   },
   "dependencies": {
-    "vue": "^2.6.13",
+    "vue": "^2.6.14",
     "vue-hot-reload-api": "^2.3.4",
     "vuex": "^3.6.2"
   }
