@@ -3,7 +3,7 @@
     "axios": "^0.21.1",
     "bootstrap": "^4.4.1",
     "jquery": "^3.6.0",
-    "naja": "^1.8.1",
+    "naja": "^2.1.5",
     "nette-forms": "^3.2.0",
     "nette.ajax.js": "^2.3.0",
     "vue": "^2.6.13",
@@ -35,7 +35,7 @@
     "webpack-bundle-analyzer": "^4.4.2",
     "webpack-cli": "^4.7.0",
     "webpack-dev-server": "^3.11.2",
-    "webpack-merge": "^5.7.3"
+    "webpack-merge": "^5.8.0"
   },
   "main": "assets/src/main.js",
   "scripts": {
