@@ -2,7 +2,7 @@
   "description": "0cjs!",
   "devDependencies": {
     "webpack": "^4.29.0",
-    "webpack-cli": "^3.2.1"
+    "webpack-cli": "^3.3.12"
   },
   "scripts": {
     "start": "webpack --mode development src/main.js",
